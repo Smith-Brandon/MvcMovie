@@ -19,7 +19,7 @@ namespace MvcMovie.Controllers
             _context = context;
         }
         // GET: Movies
-        public async Task<IActionResult> Index(string movieGenre, string searchString)
+        public async Task<IActionResult> Index(string movieGenre, string searchString, string movieRelease)
         {
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.Movie
@@ -38,7 +38,13 @@ namespace MvcMovie.Controllers
             {
                 movies = movies.Where(x => x.Genre == movieGenre);
             }
-            
+            if (!string.IsNullOrEmpty(movieRelease))
+            {
+                DateTime dateTime = DateTime.Parse(movieRelease);
+                movieRelease = dateTime;
+                movies = movies.Where(x => x.ReleaseDate == movieRelease);
+            }
+
             var movieGenreVM = new MovieGenreViewModel
             {
                 Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
