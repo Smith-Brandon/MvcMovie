@@ -59,8 +59,25 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-image: url(../images/christ.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mainDiv {
+    background-color: #ffffff;
+    max-width: 90%;
+    min-width: 80%;
+    min-height: 600px;
+    max-height: 90%;
+    margin: auto;
+    display: inline-block;
+    flex-wrap: nowrap;
+    padding: 15px;
+}
+img {
+    padding: 10px;
 }
 .footer {
   position: absolute;
