@@ -25,7 +25,7 @@ namespace MvcMovie.Models
                     {
                         Title = "The Other Side of Heaven",
                         ReleaseDate = DateTime.Parse("2001-12-14"),
-                        Genre = "Autobiography ",
+                        Genre = "Biography ",
                         Rating = "PG 13",
                         Price = 16.99M
                     },
